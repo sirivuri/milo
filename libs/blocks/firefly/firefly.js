@@ -127,7 +127,7 @@ function createTemplate(result) {
   return templateWrapper;
 }
 
-async function waitForGeneration(jobId) {
+async function waitForGeneration(configs) {
   const { fetchingState } = fireflyState;
   const { progressManager } = fetchingState;
 
@@ -140,29 +140,31 @@ async function waitForGeneration(jobId) {
         reject(new Error('timed out'));
       }
       tries -= 1;
-      let res = null;
+      const responses = [];
       try {
-        res = await imageGenerator.monitorGeneration(jobId);
+        const request = configs.map((config) => imageGenerator.monitorGeneration(config.jobId).then((res) => responses.push(res)));
+        await Promise.all(request);
       } catch (err) {
         // ignore and keep trying
       }
-      const { status, results } = res || {};
-      if (!status) {
+      if (responses.length === 0) {
         progressManager.update(0);
-      } else if (!status || status === MONITOR_STATUS.IN_PROGRESS) {
-        progressManager.update(Math.floor(results.length / NUM_RESULTS) * 100);
-      } else if (status === MONITOR_STATUS.COMPLETED) {
+      } else if (responses.some((res) => res.status === MONITOR_STATUS.IN_PROGRESS)) {
+        const numberInProgress = responses.filter((r) => r.status === MONITOR_STATUS.IN_PROGRESS).length;
+        progressManager.update(Math.floor(numberInProgress / NUM_RESULTS) * 100);
+      } else if (responses.every((res) => res.status === MONITOR_STATUS.COMPLETED)) {
+        const results = responses.flatMap((r) => r.results);
         progressManager.update(100);
         clearInterval(fetchingState.intervalId);
         setTimeout(() => {
           resolve(results);
         }, PROGRESS_ANIMATION_DURATION + PROGRESS_BAR_LINGER_DURATION);
-      } else if (status === MONITOR_STATUS.FAILED) {
+      } else if (responses.some((res) => res.status === MONITOR_STATUS.FAILED)) {
         clearInterval(fetchingState.intervalId);
-        reject(new Error(JSON.stringify({ status })));
+        reject(new Error(JSON.stringify({ f: 'Failed' })));
       } else {
         clearInterval(fetchingState.intervalId);
-        reject(new Error(JSON.stringify({ status, results, reason: 'unexpected status' })));
+        reject(new Error(JSON.stringify({ f: 'Failed', reason: 'unexpected status' })));
       }
     }, MONITOR_INTERVAL);
   });
@@ -235,6 +237,7 @@ function retry(maxRetries, fn, delay = 2000) {
 export async function fetchResults(modalContent) {
   const {
     query,
+    queries,
     fetchingState,
   } = fireflyState;
 
@@ -278,28 +281,29 @@ export async function fetchResults(modalContent) {
   }
 
   // TODO: placeholders for locale and category
-  const requestConfig = {
-    query,
-    num_results: NUM_RESULTS,
+  const configs = queries.map((q) => ({
+    query: q,
+    num_results: queries.length > 1 ? 1 : NUM_RESULTS,
     locale: 'en-us',
     category: 'poster',
-    force: searchPositionMap.has(query),
-    start_index: searchPositionMap.get(query) || 0,
-  };
+    force: searchPositionMap.has(q),
+    start_index: searchPositionMap.get(q) || 0,
+  }));
 
   try {
-    let jobId;
-    await retry(REQUEST_GENERATION_RETRIES, async () => {
-      const res = await imageGenerator.startJob(requestConfig.query, requestConfig.num_results);
+    const promises = configs.map((config) => retry(REQUEST_GENERATION_RETRIES, async () => {
+      const res = await imageGenerator.startJob(config.query, config.num_results);
       const { status, jobId: generatedJobId } = res;
       if (![MONITOR_STATUS.COMPLETED, MONITOR_STATUS.IN_PROGRESS].includes(status)) {
         throw new Error(`Error requesting generation: ${generatedJobId} ${status}`);
       }
-      jobId = generatedJobId;
-    }, 2500);
+      config.jobId = generatedJobId;
+    }, 2500));
+    await Promise.all(promises);
+
     // first 6-12% as the time for triggering generation
     fetchingState.progressManager.update(Math.floor(Math.random() * 6 + 6));
-    fetchingState.results = await waitForGeneration(jobId);
+    fetchingState.results = await waitForGeneration(configs);
 
     if (!searchPositionMap.has(query)) {
       searchPositionMap.set(query, NUM_RESULTS);
@@ -382,12 +386,13 @@ function createModalSearch(modalContent) {
       return;
     }
     aceState.query = searchBar.value;
+    aceState.queries = [];
+    aceState.queries[0] = searchBar.value;
     // TODO - add the GPT
     if (searchBar.value.length > 120) {
-      const queries = await queryConversations(searchBar.value, NUM_RESULTS);
-      console.log(queries);
-      console.log(queries[0]);
-      return;
+      aceState.queries = await queryConversations(searchBar.value, NUM_RESULTS);
+      console.log(aceState.queries);
+      console.log(aceState.queries[0]);
     }
     await fetchResults(modalContent);
     renderResults(modalContent);
