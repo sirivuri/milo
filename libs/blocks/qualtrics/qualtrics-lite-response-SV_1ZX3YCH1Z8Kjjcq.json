@@ -1,0 +1,429 @@
+{
+	"result": {
+		"id": "SV_1ZX3YCH1Z8Kjjcq",
+		"name": "CSC Shortened Maturity Assessment",
+		"ownerId": "UR_6eYkwWDy62kzKoC",
+		"organizationId": "adobesandbox",
+		"isActive": true,
+		"creationDate": "2023-09-12T16:52:20Z",
+		"lastModifiedDate": "2023-09-12T17:27:07Z",
+		"expiration": {
+			"startDate": null,
+			"endDate": null
+		},
+		"questions": {
+			"QID94": {
+				"questionType": {
+					"type": "MC",
+					"selector": "SAVR",
+					"subSelector": "TX"
+				},
+				"questionText": "1. Creative teams are generally given the information they need (e.g., files, specifications, format info, existing assets, etc.) to begin project work internally and externally",
+				"questionLabel": null,
+				"validation": {
+					"doesForceResponse": false
+				},
+				"questionName": "Q3",
+				"choices": {
+					"1": {
+						"recode": "1",
+						"description": "1. Creative teams do not consistently have access to information and resources at project outset and often need to consult several teams or documents to begin work",
+						"choiceText": "1. Creative teams do not consistently have access to information and resources at project outset and often need to consult several teams or documents to begin work",
+						"imageDescription": null,
+						"variableName": null,
+						"analyze": true
+					},
+					"2": {
+						"recode": "2",
+						"description": "2. Disagree",
+						"choiceText": "2. Disagree",
+						"imageDescription": null,
+						"variableName": null,
+						"analyze": true
+					},
+					"3": {
+						"recode": "3",
+						"description": "3. Creative teams are usually given some, but not all of the information and resources they need at project outset",
+						"choiceText": "3. Creative teams are usually given some, but not all of the information and resources they need at project outset",
+						"imageDescription": null,
+						"variableName": null,
+						"analyze": true
+					},
+					"4": {
+						"recode": "4",
+						"description": "4. Agree",
+						"choiceText": "4. Agree",
+						"imageDescription": null,
+						"variableName": null,
+						"analyze": true
+					},
+					"5": {
+						"recode": "5",
+						"description": "5. Creative teams are usually given all the necessary information and resources they need at project outset",
+						"choiceText": "5. Creative teams are usually given all the necessary information and resources they need at project outset",
+						"imageDescription": null,
+						"variableName": null,
+						"analyze": true
+					}
+				}
+			},
+			"QID95": {
+				"questionType": {
+					"type": "MC",
+					"selector": "SAVR",
+					"subSelector": "TX"
+				},
+				"questionText": "2. Our content creation tools are mostly integrated with other systems to track and manage status, feedback and approvals within a project",
+				"questionLabel": null,
+				"validation": {
+					"doesForceResponse": false
+				},
+				"questionName": "Q10",
+				"choices": {
+					"1": {
+						"recode": "1",
+						"description": "1. Our content creation tools exist in siloes and are not integrated with other tools tied to collaboration or approvals",
+						"choiceText": "1. Our content creation tools exist in siloes and are not integrated with other tools tied to collaboration or approvals",
+						"imageDescription": null,
+						"variableName": null,
+						"analyze": true
+					},
+					"2": {
+						"recode": "2",
+						"description": "2. Disagree",
+						"choiceText": "2. Disagree",
+						"imageDescription": null,
+						"variableName": null,
+						"analyze": true
+					},
+					"3": {
+						"recode": "3",
+						"description": "3. Our content creation tools are integrated with some, but not all workflow and collaboration tools",
+						"choiceText": "3. Our content creation tools are integrated with some, but not all workflow and collaboration tools",
+						"imageDescription": null,
+						"variableName": null,
+						"analyze": true
+					},
+					"4": {
+						"recode": "4",
+						"description": "4. Agree",
+						"choiceText": "4. Agree",
+						"imageDescription": null,
+						"variableName": null,
+						"analyze": true
+					},
+					"5": {
+						"recode": "5",
+						"description": "5. Our content creation tools are integrated with other tools to facilitate the execution of the right tasks within creatives' tool of choice, allowing for a fast & agile creative process",
+						"choiceText": "5. Our content creation tools are integrated with other tools to facilitate the execution of the right tasks within creatives' tool of choice, allowing for a fast & agile creative process",
+						"imageDescription": null,
+						"variableName": null,
+						"analyze": true
+					}
+				}
+			},
+			"QID96": {
+				"questionType": {
+					"type": "MC",
+					"selector": "SAVR",
+					"subSelector": "TX"
+				},
+				"questionText": "3. We incorporate automation in our creative workflows to eliminate most of the repetitive manual tasks our teams face",
+				"questionLabel": null,
+				"validation": {
+					"doesForceResponse": false
+				},
+				"questionName": "Q13",
+				"choices": {
+					"1": {
+						"recode": "1",
+						"description": "1. We use no automation in our creative workflows",
+						"choiceText": "1. We use no automation in our creative workflows",
+						"imageDescription": null,
+						"variableName": null,
+						"analyze": true
+					},
+					"2": {
+						"recode": "2",
+						"description": "2. Disagree",
+						"choiceText": "2. Disagree",
+						"imageDescription": null,
+						"variableName": null,
+						"analyze": true
+					},
+					"3": {
+						"recode": "3",
+						"description": "3. We leverage some automation in our creative workflows",
+						"choiceText": "3. We leverage some automation in our creative workflows",
+						"imageDescription": null,
+						"variableName": null,
+						"analyze": true
+					},
+					"4": {
+						"recode": "4",
+						"description": "4. Agree",
+						"choiceText": "4. Agree",
+						"imageDescription": null,
+						"variableName": null,
+						"analyze": true
+					},
+					"5": {
+						"recode": "5",
+						"description": "5. We automate most or all repetitive manual tasks in our creative workflows",
+						"choiceText": "5. We automate most or all repetitive manual tasks in our creative workflows",
+						"imageDescription": null,
+						"variableName": null,
+						"analyze": true
+					}
+				}
+			},
+			"QID97": {
+				"questionType": {
+					"type": "MC",
+					"selector": "SAVR",
+					"subSelector": "TX"
+				},
+				"questionText": "4. We can easily find and reuse content (e.g., existing assets) to increase speed of content output",
+				"questionLabel": null,
+				"validation": {
+					"doesForceResponse": false
+				},
+				"questionName": "Q23",
+				"choices": {
+					"1": {
+						"recode": "1",
+						"description": "1. There is minimal reuse of completed assets or creative elements",
+						"choiceText": "1. There is minimal reuse of completed assets or creative elements",
+						"imageDescription": null,
+						"variableName": null,
+						"analyze": true
+					},
+					"2": {
+						"recode": "2",
+						"description": "2. Disagree",
+						"choiceText": "2. Disagree",
+						"imageDescription": null,
+						"variableName": null,
+						"analyze": true
+					},
+					"3": {
+						"recode": "3",
+						"description": "3. We can easily access and reuse some, but not all pre-existing assets",
+						"choiceText": "3. We can easily access and reuse some, but not all pre-existing assets",
+						"imageDescription": null,
+						"variableName": null,
+						"analyze": true
+					},
+					"4": {
+						"recode": "4",
+						"description": "4. Agree",
+						"choiceText": "4. Agree",
+						"imageDescription": null,
+						"variableName": null,
+						"analyze": true
+					},
+					"5": {
+						"recode": "5",
+						"description": "5. All pre-existing assets can be easily found and reused",
+						"choiceText": "5. All pre-existing assets can be easily found and reused",
+						"imageDescription": null,
+						"variableName": null,
+						"analyze": true
+					}
+				}
+			},
+			"QID98": {
+				"questionType": {
+					"type": "MC",
+					"selector": "SAVR",
+					"subSelector": "TX"
+				},
+				"questionText": "5. We have an integrated and streamlined creative-to-marketing handoff process for finalized assets",
+				"questionLabel": null,
+				"validation": {
+					"doesForceResponse": false
+				},
+				"questionName": "Q27",
+				"choices": {
+					"1": {
+						"recode": "1",
+						"description": "1. Assets are handed manually to creative to marketing teams",
+						"choiceText": "1. Assets are handed manually to creative to marketing teams",
+						"imageDescription": null,
+						"variableName": null,
+						"analyze": true
+					},
+					"2": {
+						"recode": "2",
+						"description": "2. Disagree",
+						"choiceText": "2. Disagree",
+						"imageDescription": null,
+						"variableName": null,
+						"analyze": true
+					},
+					"3": {
+						"recode": "3",
+						"description": "3. We have some tools that help us streamline the handoff process, but not everything is integrated",
+						"choiceText": "3. We have some tools that help us streamline the handoff process, but not everything is integrated",
+						"imageDescription": null,
+						"variableName": null,
+						"analyze": true
+					},
+					"4": {
+						"recode": "4",
+						"description": "4. Agree",
+						"choiceText": "4. Agree",
+						"imageDescription": null,
+						"variableName": null,
+						"analyze": true
+					},
+					"5": {
+						"recode": "5",
+						"description": "5. All creative and marketing teams can access creative work directly when needed and for various channels at the same time",
+						"choiceText": "5. All creative and marketing teams can access creative work directly when needed and for various channels at the same time",
+						"imageDescription": null,
+						"variableName": null,
+						"analyze": true
+					}
+				}
+			},
+			"QID99": {
+				"questionType": {
+					"type": "MC",
+					"selector": "SAVR",
+					"subSelector": "TX"
+				},
+				"questionText": "6. Teams apply learnings from asset and campaign performance data for continuous improvement in creative outputs",
+				"questionLabel": null,
+				"validation": {
+					"doesForceResponse": false
+				},
+				"questionName": "Q34",
+				"choices": {
+					"1": {
+						"recode": "1",
+						"description": "1. Past asset and campaign performance data are seldom used for new content creation efforts",
+						"choiceText": "1. Past asset and campaign performance data are seldom used for new content creation efforts",
+						"imageDescription": null,
+						"variableName": null,
+						"analyze": true
+					},
+					"2": {
+						"recode": "2",
+						"description": "2. Disagree",
+						"choiceText": "2. Disagree",
+						"imageDescription": null,
+						"variableName": null,
+						"analyze": true
+					},
+					"3": {
+						"recode": "3",
+						"description": "3. Some creative outputs and decisions are guided by past asset or campaign performance data",
+						"choiceText": "3. Some creative outputs and decisions are guided by past asset or campaign performance data",
+						"imageDescription": null,
+						"variableName": null,
+						"analyze": true
+					},
+					"4": {
+						"recode": "4",
+						"description": "4. Agree",
+						"choiceText": "4. Agree",
+						"imageDescription": null,
+						"variableName": null,
+						"analyze": true
+					},
+					"5": {
+						"recode": "5",
+						"description": "5. All of our creative outputs and decisions are driven by past asset or campaign performance data",
+						"choiceText": "5. All of our creative outputs and decisions are driven by past asset or campaign performance data",
+						"imageDescription": null,
+						"variableName": null,
+						"analyze": true
+					}
+				}
+			}
+		},
+		"exportColumnMap": {
+			"Q3": {
+				"question": "QID94"
+			},
+			"Q10": {
+				"question": "QID95"
+			},
+			"Q13": {
+				"question": "QID96"
+			},
+			"Q23": {
+				"question": "QID97"
+			},
+			"Q27": {
+				"question": "QID98"
+			},
+			"Q34": {
+				"question": "QID99"
+			}
+		},
+		"blocks": {
+			"BL_eqA0PpmvBG0Q5hA": {
+				"description": "CSC Shortened Maturity Assessment",
+				"elements": [
+					{
+						"type": "Question",
+						"questionId": "QID94"
+					},
+					{
+						"type": "Question",
+						"questionId": "QID95"
+					},
+					{
+						"type": "Question",
+						"questionId": "QID96"
+					},
+					{
+						"type": "Question",
+						"questionId": "QID97"
+					},
+					{
+						"type": "Question",
+						"questionId": "QID98"
+					},
+					{
+						"type": "Question",
+						"questionId": "QID99"
+					}
+				]
+			}
+		},
+		"flow": [
+			{
+				"type": "EmbeddedData"
+			},
+			{
+				"type": "EmbeddedData"
+			},
+			{
+				"id": "BL_eqA0PpmvBG0Q5hA",
+				"type": "Block"
+			}
+		],
+		"embeddedData": [
+			{
+				"name": "AssessID"
+			},
+			{
+				"name": "Q_CHL"
+			}
+		],
+		"comments": {},
+		"loopAndMerge": {},
+		"responseCounts": {
+			"auditable": 3,
+			"generated": 0,
+			"deleted": 0
+		}
+	},
+	"meta": {
+		"httpStatus": "200 - OK",
+		"requestId": "93f06e2d-1879-4ab7-b953-ff3cfff50b68"
+	}
+}
